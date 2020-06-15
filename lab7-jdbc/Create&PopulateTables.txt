@@ -1,0 +1,52 @@
+CREATE TABLE lab7_rooms(
+    RoomCode CHAR(3) PRIMARY KEY,
+    RoomName VARCHAR(100) NOT NULL,
+    Beds INTEGER NOT NULL,
+    bedType VARCHAR(100) NOT NULL,
+    maxOccupancy INTEGER NOT NULL,
+    basePrice INTEGER NOT NULL,
+    decor VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE lab7_reservations(
+    CODE INTEGER  NOT NULL PRIMARY KEY,
+    Room CHAR(3) NOT NULL,
+    CheckIn DATE NOT NULL,
+    Checkout DATE NOT NULL,
+    Rate DECIMAL (5, 2) NOT NULL,
+    LastName VARCHAR(100) NOT NULL,
+    FirstName VARCHAR(100) NOT NULL,
+    Adults INTEGER NOT NULL,
+    Kids INTEGER NOT NULL,
+    FOREIGN KEY (Room) REFERENCES lab7_rooms (RoomCode)
+);
+
+
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('GOF','golf room',1,'fairway',69,420,'fancypantsy');
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('PIG','pig room',10,'mud',4,20,'farm');
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('DOG','dog room',5,'grass',2,10,'farm');
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('CAT','cat room',2,'grass',3,10,'farm');
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('SHP','sheep room',69,'grass',19,24,'farm');
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('BIG','big room',420,'bigbedyo',80085,1,'simple');
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('CAR','car room',1,'cement',1,100000000,'racing');
+INSERT INTO lab7_rooms(RoomCode,RoomName,Beds,bedType,maxOccupancy,basePrice,decor) VALUES ('KNG','king room',100,'bestbedever',69,15,'fancypantsy');
+
+
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (80085,'GOF','2020-01-01','2020-01-10',50.0,'monkeyman','mister',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (12345,'GOF','2020-01-11','2020-01-20',51,'marbles','misses',0,1);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (20001,'PIG','2020-01-05','2020-01-07',80,'pig','mister',3,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (69420,'DOG','2020-01-01','2020-01-05',69,'dog','mister',2,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (42069,'CAT','2020-01-20','2020-01-24',59,'monkeyman','mister',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (13337,'SHP','2020-01-02','2020-01-04',44,'sheep','mister',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (10101,'BIG','2020-01-03','2020-01-10',33,'giant','mister',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (11010,'CAR','2020-01-01','2020-01-29',1,'fourRunner','Toyota',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (54321,'KNG','2020-01-09','2020-01-10',1,'kingguy','sirKingly',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (69696,'PIG','2020-01-10','2020-01-12',222,'pigdude','another',1,1);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (96969,'DOG','2020-01-11','2020-01-14',420,'dogdude','doggerson',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (44444,'SHP','2020-01-05','2020-01-09',111,'sheepyboi','a',1,2);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (33333,'BIG','2020-01-12','2020-01-19',100,'boi','smol',10,9);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (22222,'CAR','2020-01-26','2020-01-28',101,'fType','Jaguar',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (11111,'KNG','2020-01-16','2020-01-17',100,'peasant','peasantly',1,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (80000,'GOF','2020-01-21','2020-01-22',69.42,'golfguy','misterMan',2,0);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (55555,'GOF','2020-01-24','2020-01-25',111,'golflady','misseslady',0,4);
+INSERT INTO lab7_reservations(CODE,Room,CheckIn,Checkout,Rate,LastName,FirstName,Adults,Kids) VALUES (66666,'GOF','2020-01-29','2020-01-30',10,'WOOOOOODS','TYGA',0,1);

@@ -1,0 +1,9 @@
+RoomCode, RoomName, Beds, bedType, maxOccupancy, basePrice, decor
+GOF, golf room, 1, fairway, 69, 420, fancypantsy
+PIG, pig room, 10, mud, 4, 20, farm
+DOG, dog room, 5, grass, 2, 10, farm
+CAT, cat room, 2, grass, 3, 10, farm
+SHP, sheep room, 69, grass, 19, 24, farm
+BIG, big room, 420, bigbedyo, 80085, 1, simple
+CAR, car room, 1, cement, 1, 100000000, racing
+KNG, king room, 100, bestbedever, 69, 15, fancypantsy
